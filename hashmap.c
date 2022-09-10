@@ -45,9 +45,9 @@ void insertMap(HashMap * map, char * key, void * value) {
   float parte = map->size / map->capacity;
 
   if (parte > 0.7){
-    enlange(map);
+    enlarge(map);
   }
-while(map->buquets[i] != NULL && map->buckets[i]->kay != NULL){
+while(map->buckets[i] != NULL && map->buckets[i]->key != NULL){
   i = (i+1) % map->capacity;
   }
   map->b

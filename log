@@ -138,3 +138,44 @@ hashmap.c:80:10: error: unused variable ‘i’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 cb49dce
+Sat 10 Sep 2022 06:39:25 PM UTC: 
+ hashmap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:44:12: error: initialization of ‘long int’ from ‘Pair *’ makes integer from pointer without a cast [-Werror=int-conversion]
+   44 |   long i = createPair(key, value);
+      |            ^~~~~~~~~~
+hashmap.c:53:6: error: ‘HashMap’ {aka ‘struct HashMap’} has no member named ‘b’
+   53 |   map->b
+      |      ^~
+hashmap.c:53:9: error: expected ‘;’ before ‘}’ token
+   53 |   map->b
+      |         ^
+      |         ;
+   54 | }
+      | ~        
+hashmap.c:43:9: error: unused variable ‘newPair’ [-Werror=unused-variable]
+   43 |   Pair *newPair = createPair(key, value);
+      |         ^~~~~~~
+hashmap.c: In function ‘createMap’:
+hashmap.c:69:14: error: expected ‘;’ before ‘i’
+   69 |   map->size--i;
+      |              ^
+      |              ;
+hashmap.c: In function ‘searchMap’:
+hashmap.c:83:8: error: too few arguments to function ‘is_equal’
+   83 |     if(is_equal())
+      |        ^~~~~~~~
+hashmap.c:35:5: note: declared here
+   35 | int is_equal(void* key1, void* key2) {
+      |     ^~~~~~~~
+hashmap.c:84:3: error: expected expression before ‘}’ token
+   84 |   }
+      |   ^
+hashmap.c:80:10: error: unused variable ‘i’ [-Werror=unused-variable]
+   80 |   size_t i = hash(key, map->capacity);
+      |          ^
+cc1: all warnings being treated as errors
+Compilation failed
+244a726
