@@ -385,3 +385,14 @@ hashmap.c:83:9: error: unused variable ‘i’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 48138df
+Sat 10 Sep 2022 07:06:57 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘searchMap’:
+hashmap.c:83:9: error: unused variable ‘i’ [-Werror=unused-variable]
+   83 |  size_t i = hash(key, map->capacity);
+      |         ^
+cc1: all warnings being treated as errors
+Compilation failed
+77376ec
