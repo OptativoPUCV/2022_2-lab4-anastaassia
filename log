@@ -232,3 +232,30 @@ hashmap.c:82:10: error: unused variable ‘i’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 3e0132d
+Sat 10 Sep 2022 06:51:14 PM UTC: 
+ hashmap.c | 1 -
+ 1 file changed, 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:49:20: error: ‘i’ undeclared (first use in this function)
+   49 | while(map->buckets[i] != NULL && map->buckets[i]->key != NULL){
+      |                    ^
+hashmap.c:49:20: note: each undeclared identifier is reported only once for each function it appears in
+hashmap.c:52:21: error: ‘new’ undeclared (first use in this function)
+   52 |   map->buckets[i] = new;
+      |                     ^~~
+hashmap.c:43:9: error: unused variable ‘newPair’ [-Werror=unused-variable]
+   43 |   Pair *newPair = createPair(key, value);
+      |         ^~~~~~~
+hashmap.c: In function ‘createMap’:
+hashmap.c:70:14: error: expected ‘;’ before ‘i’
+   70 |   map->size--i;
+      |              ^
+      |              ;
+hashmap.c: In function ‘searchMap’:
+hashmap.c:81:10: error: unused variable ‘i’ [-Werror=unused-variable]
+   81 |   size_t i = hash(key, map->capacity);
+      |          ^
+cc1: all warnings being treated as errors
+Compilation failed
+96ff653
