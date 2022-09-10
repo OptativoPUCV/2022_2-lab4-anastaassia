@@ -205,3 +205,30 @@ hashmap.c:82:10: error: unused variable ‘i’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 698ccc2
+Sat 10 Sep 2022 06:50:35 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:44:12: error: initialization of ‘long int’ from ‘Pair *’ makes integer from pointer without a cast [-Werror=int-conversion]
+   44 |   long i = createPair(key, value);
+      |            ^~~~~~~~~~
+hashmap.c:53:21: error: ‘new’ undeclared (first use in this function)
+   53 |   map->buckets[i] = new;
+      |                     ^~~
+hashmap.c:53:21: note: each undeclared identifier is reported only once for each function it appears in
+hashmap.c:43:9: error: unused variable ‘newPair’ [-Werror=unused-variable]
+   43 |   Pair *newPair = createPair(key, value);
+      |         ^~~~~~~
+hashmap.c: In function ‘createMap’:
+hashmap.c:71:14: error: expected ‘;’ before ‘i’
+   71 |   map->size--i;
+      |              ^
+      |              ;
+hashmap.c: In function ‘searchMap’:
+hashmap.c:82:10: error: unused variable ‘i’ [-Werror=unused-variable]
+   82 |   size_t i = hash(key, map->capacity);
+      |          ^
+cc1: all warnings being treated as errors
+Compilation failed
+3e0132d
