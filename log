@@ -2,3 +2,47 @@ Fri 09 Sep 2022 12:25:31 PM UTC:
  tests:  0|6
 total_score: 0/70
 592308e
+Sat 10 Sep 2022 06:05:24 PM UTC: 
+ hashmap.c | 20 ++++++++++++++++++--
+ 1 file changed, 18 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:44:12: error: initialization of ‘long int’ from ‘Pair *’ makes integer from pointer without a cast [-Werror=int-conversion]
+   44 |   long i = createPair(key, value);
+      |            ^~~~~~~~~~
+hashmap.c:48:5: error: implicit declaration of function ‘enlange’; did you mean ‘enlarge’? [-Werror=implicit-function-declaration]
+   48 |     enlange(map);
+      |     ^~~~~~~
+      |     enlarge
+hashmap.c:44:8: error: unused variable ‘i’ [-Werror=unused-variable]
+   44 |   long i = createPair(key, value);
+      |        ^
+hashmap.c:43:9: error: unused variable ‘newPair’ [-Werror=unused-variable]
+   43 |   Pair *newPair = createPair(key, value);
+      |         ^~~~~~~
+hashmap.c: In function ‘createMap’:
+hashmap.c:62:53: error: ‘Piar’ undeclared (first use in this function); did you mean ‘Pair’?
+   62 |   map->buckets = (Pair **) malloc(capacity * sizeof(Piar));
+      |                                                     ^~~~
+      |                                                     Pair
+hashmap.c:62:53: note: each undeclared identifier is reported only once for each function it appears in
+hashmap.c:65:14: error: expected ‘;’ before ‘i’
+   65 |   map->size--i;
+      |              ^
+      |              ;
+hashmap.c: In function ‘searchMap’:
+hashmap.c:79:8: error: too few arguments to function ‘is_equal’
+   79 |     if(is_equal())
+      |        ^~~~~~~~
+hashmap.c:35:5: note: declared here
+   35 | int is_equal(void* key1, void* key2){
+      |     ^~~~~~~~
+hashmap.c:80:3: error: expected expression before ‘}’ token
+   80 |   }
+      |   ^
+hashmap.c:76:10: error: unused variable ‘i’ [-Werror=unused-variable]
+   76 |   size_t i = hash(key, map->capacity);
+      |          ^
+cc1: all warnings being treated as errors
+Compilation failed
+398edf5
