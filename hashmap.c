@@ -50,7 +50,9 @@ void insertMap(HashMap * map, char * key, void * value) {
 while(map->buckets[i] != NULL && map->buckets[i]->key != NULL){
   i = (i+1) % map->capacity;
   }
-  map->b
+  map->buckets[i];
+  map->current = i;
+  map->size++;
 }
 
 void enlarge(HashMap * map) {
@@ -80,7 +82,7 @@ Pair * searchMap(HashMap * map,  char * key) {
   size_t i = hash(key, map->capacity);
 
   while(1){
-    if(is_equal())
+    //if(is_equal)
   }
 
 
