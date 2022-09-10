@@ -42,9 +42,9 @@ int is_equal(void* key1, void* key2) {
 void insertMap(HashMap * map, char * key, void * value) {
 Pair *new = createPair(key, value);
     long i = hash(key, map->capacity);
-    float porcentaje = map->size / map->capacity;
+    float parte = map->size / map->capacity;
 
-    if (porcentaje > 0.7) {
+    if (parte > 0.7) {
         enlarge(map);
     }
 
