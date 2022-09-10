@@ -80,7 +80,7 @@ void eraseMap(HashMap * map,  char * key) {
 }
 
 Pair * searchMap(HashMap * map,  char * key) {   
- size_t i = hash(key, map->capacity);
+ //size_t i = hash(key, map->capacity);
 
     return NULL;
 }
