@@ -32,7 +32,7 @@ long hash( char * key, long capacity) {
     return hash%capacity;
 }
 
-int is_equal(void* key1, void* key2){
+int is_equal(void* key1, void* key2) {
     if(key1==NULL || key2==NULL) return 0;
     if(strcmp((char*)key1,(char*)key2) == 0) return 1;
     return 0;
@@ -47,6 +47,10 @@ void insertMap(HashMap * map, char * key, void * value) {
   if (parte > 0.7){
     enlange(map);
   }
+while(map->buquets[i] != NULL && map->buckets[i]->kay != NULL){
+  i = (i+1) % map->capacity;
+  }
+  map->b
 }
 
 void enlarge(HashMap * map) {
