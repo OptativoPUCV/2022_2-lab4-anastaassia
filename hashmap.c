@@ -40,15 +40,16 @@ int is_equal(void* key1, void* key2) {
 
 //--------------------------------------------------------
 void insertMap(HashMap * map, char * key, void * value) {
-  Pair *new = createPair(key, value);
-  long i = hash(key, map->capacity);
-  float parte = map->size / map->capacity;
+Pair *new = createPair(key, value);
+    long i = hash(key, map->capacity);
+    float porcentaje = map->size / map->capacity;
 
-  if (parte > 0.7){
-    enlarge(map);
-  }
-  while(map->buckets[i] != NULL && map->buckets[i]->key != NULL){
-    i = (i+1) % map->capacity;
+    if (porcentaje > 0.7) {
+        enlarge(map);
+    }
+
+    while (map->buckets[i] != NULL && map->buckets[i]->key != NULL)  {
+        i = (i + 1) % map->capacity;
     }
     map->buckets[i] = new;
     map->current = i;
