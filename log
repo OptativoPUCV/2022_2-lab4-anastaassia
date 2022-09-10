@@ -353,3 +353,19 @@ test.c:100:6: error: ‘hash_test1’ defined but not used [-Werror=unused-funct
 cc1: all warnings being treated as errors
 Compilation failed
 ce5c7da
+Sat 10 Sep 2022 06:57:03 PM UTC: 
+ hashmap.c | 23 +++++++++--------------
+ 1 file changed, 9 insertions(+), 14 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘createMap’:
+hashmap.c:71:13: error: expected ‘;’ before ‘i’
+   71 |  map->size--i;
+      |             ^
+      |             ;
+hashmap.c: In function ‘searchMap’:
+hashmap.c:82:9: error: unused variable ‘i’ [-Werror=unused-variable]
+   82 |  size_t i = hash(key, map->capacity);
+      |         ^
+cc1: all warnings being treated as errors
+Compilation failed
+6e90a85
