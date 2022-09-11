@@ -523,3 +523,13 @@ hashmap.c:103:47: error: ‘*map->buckets’ is a pointer; did you mean to use �
       |                                               ->
 Compilation failed
 87eca47
+Sun 11 Sep 2022 07:57:54 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘firstMap’:
+hashmap.c:103:38: error: ‘HashMap’ {aka ‘struct HashMap’} has no member named ‘key’
+  103 |     if(map->buckets[i] != NULL && map->key != NULL){
+      |                                      ^~
+Compilation failed
+169412a
