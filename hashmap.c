@@ -95,7 +95,7 @@ Pair * searchMap(HashMap * map,  char * key) {
 }
 
 Pair * firstMap(HashMap * map) {
-  size_aux i;
+  size_t i;
   if (map->size == 0){
     return NULL;
   }
