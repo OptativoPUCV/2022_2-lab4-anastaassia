@@ -451,3 +451,21 @@ Sun 11 Sep 2022 07:25:55 PM UTC:
  tests:  5|4
 total_score: 30/70
 3f4ebbf
+Sun 11 Sep 2022 07:33:37 PM UTC: 
+ hashmap.c | 10 ++++++++--
+ 1 file changed, 8 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘searchMap’:
+hashmap.c:86:9: error: the address of ‘is_equal’ will always evaluate as ‘true’ [-Werror=address]
+   86 |   while(is_equal !(key, map->buckets[i]->key)){
+      |         ^~~~~~~~
+hashmap.c:86:17: error: expected ‘)’ before ‘!’ token
+   86 |   while(is_equal !(key, map->buckets[i]->key)){
+      |        ~        ^~
+      |                 )
+hashmap.c:93:12: error: returning ‘HashMap *’ {aka ‘struct HashMap *’} from a function with incompatible return type ‘Pair *’ [-Werror=incompatible-pointer-types]
+   93 |     return map;
+      |            ^~~
+cc1: all warnings being treated as errors
+Compilation failed
+39fa7b4
