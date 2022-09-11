@@ -58,9 +58,6 @@ Pair *new = createPair(key, value);
 
 void enlarge(HashMap * map) {
     enlarge_called = 1; //no borrar (testing purposes)
-  
-
-
 }
 
 
@@ -75,9 +72,13 @@ HashMap * createMap(long capacity) {
     return map;
 }
 
-void eraseMap(HashMap * map,  char * key) {    
-
-
+void eraseMap(HashMap * map,  char * key) {   
+  Pair *pairRemove = searchMap(map, key);
+  
+  if(pairRemove != NULL){
+    pairRemove->key = NULL;
+    map->size--;
+  }
 }
 
 Pair * searchMap(HashMap * map,  char * key) {   
