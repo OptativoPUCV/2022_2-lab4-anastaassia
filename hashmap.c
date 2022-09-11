@@ -90,7 +90,7 @@ Pair * searchMap(HashMap * map,  char * key) {
     } 
   }
     map->current = i;
-    return map;
+    return map->buckets;
 }
 
 Pair * firstMap(HashMap * map) {
