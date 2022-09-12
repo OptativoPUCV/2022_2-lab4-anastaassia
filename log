@@ -597,3 +597,15 @@ Mon 12 Sep 2022 01:20:00 AM UTC:
  tests:  17|0
 total_score: 70/70
 fe920fd
+Mon 12 Sep 2022 01:25:53 AM UTC: 
+ hashmap.c | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:70:9: error: ‘oldBuckets’ undeclared (first use in this function); did you mean ‘old_buckets’?
+   70 |     if (oldBuckets[i] != NULL) {
+      |         ^~~~~~~~~~
+      |         old_buckets
+hashmap.c:70:9: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+384937a
