@@ -609,3 +609,9 @@ hashmap.c:70:9: error: ‘oldBuckets’ undeclared (first use in this function);
 hashmap.c:70:9: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 384937a
+Mon 12 Sep 2022 01:26:43 AM UTC: 
+ hashmap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+ tests:  17|0
+total_score: 70/70
+38bab6e

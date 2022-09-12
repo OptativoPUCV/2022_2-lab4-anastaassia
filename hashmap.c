@@ -58,7 +58,7 @@ void insertMap(HashMap * map, char * key, void * value) {
 
 void enlarge(HashMap * map) {
   enlarge_called = 1; //no borrar (testing purposes)
-  Pair **old_buckets = map->buckets;
+  Pair **oldBuckets = map->buckets;
   size_t largo = map->capacity;
   size_t i;
 
@@ -68,7 +68,7 @@ void enlarge(HashMap * map) {
 
   for (i = 0; i < largo; i++) {
     if (oldBuckets[i] != NULL) {
-      insertMap(map, old_buckets[i]->key, old_buckets[i]->value);
+      insertMap(map, oldBuckets[i]->key, oldBuckets[i]->value);
     }
   }
 }
