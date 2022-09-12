@@ -574,3 +574,20 @@ hashmap.c:61:12: error: unused variable ‘oldBuckets’ [-Werror=unused-variabl
 cc1: all warnings being treated as errors
 Compilation failed
 6f0889d
+Mon 12 Sep 2022 01:17:07 AM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:63:12: error: unused variable ‘i’ [-Werror=unused-variable]
+   63 |     size_t i;
+      |            ^
+hashmap.c:62:12: error: unused variable ‘largo’ [-Werror=unused-variable]
+   62 |     size_t largo = map->capacity;
+      |            ^~~~~
+hashmap.c:61:12: error: unused variable ‘old_buckets’ [-Werror=unused-variable]
+   61 |     Pair **old_buckets = map->buckets;
+      |            ^~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+a5a198c
