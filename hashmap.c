@@ -58,7 +58,11 @@ Pair *new = createPair(key, value);
 
 void enlarge(HashMap * map) {
     enlarge_called = 1; //no borrar (testing purposes)
-}
+    Pair **oldBuckets = map->buckets;
+    size_t largo = map->capacity;
+    size_t i;
+    
+  }
 
 
 HashMap * createMap(long capacity) {
