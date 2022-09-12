@@ -48,7 +48,7 @@ Pair *new = createPair(key, value);
         enlarge(map);
     }
 
-    while (map->buckets[i] != NULL && map->buckets[i]->key != NULL)  {
+    while (map->buckets[i] != NULL && map->buckets[i]->key != NULL) {
         i = (i + 1) % map->capacity;
     }
     map->buckets[i] = new;
@@ -58,11 +58,22 @@ Pair *new = createPair(key, value);
 
 void enlarge(HashMap * map) {
     enlarge_called = 1; //no borrar (testing purposes)
-    Pair **old_buckets = map->buckets;
+    Pair **oldBuckets = map->buckets;
     size_t largo = map->capacity;
     size_t i;
+
+    map->capacity *= 2;
+    map->buckets = (Pair **) calloc(map->capacity, sizeof(Pair *));
+    map->size = 0;
+
+    for (i = 0; i < largo; i++) {
+        if (oldBuckets[i] != NULL) {
+          
+            insertMap(map, oldBuckets[i]->key, oldBuckets[i]->value);
+        }
+    }
+}
     
-  }
 
 
 HashMap * createMap(long capacity) {
@@ -79,7 +90,7 @@ HashMap * createMap(long capacity) {
 void eraseMap(HashMap * map,  char * key) {   
   Pair *pairRemove = searchMap(map, key);
   
-  if(pairRemove != NULL){
+  if(pairRemove != NULL) {
     pairRemove->key = NULL;
     map->size--;
   }
@@ -88,9 +99,9 @@ void eraseMap(HashMap * map,  char * key) {
 Pair * searchMap(HashMap * map,  char * key) {
   long i = hash(key, map->capacity);
   
-  while(!is_equal(key, map->buckets[i]->key)){
+  while(!is_equal(key, map->buckets[i]->key)) {
     i = (i+1) % map->capacity;
-    if(map->buckets[i] == NULL){
+    if(map->buckets[i] == NULL) {
       return NULL;
     } 
   }
